@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="feedback_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;700&display=swap" rel="stylesheet">
+    <title>Форма обратной связи</title>
+</head>
+<body>
+
+    <form method="post" action = "https://httpbin.org/post">
+        <div>
+            <label for="fio">ФИО</label>
+            <input class="input-text" type="text" name="fio" id="fio" placeholder="Введите ФИО" required>
+        </div>
+
+        <div>
+            <label for="email">Электронная почта</label>
+            <input class="input-text" type="email" name="email" id="email" placeholder="Введите почту" required>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Как вы о нас узнали?</legend>
+                    <div class="radio-buttons">
+                        <input type="radio" name="source" id="friends" value="friends">
+                        <label for="friends" class="radio">Рассказали друзья</label>
+
+                        <input type="radio" name="source" id="self" value="self">
+                        <label for="self" class="radio">Сам нашел</label>
+
+                        <input type="radio" name="source" id="advert" value="advert">
+                        <label for="advert" class="radio">Реклама</label>
+                    </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <label for="msg_type">Тип обращения</label>
+            <select name="msg_type" id="msg_type">
+                <option value="report">Жалоба</option>
+                <option value="suggestion">Предложение</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="main_text">Текст обращения</label>
+            <textarea name="main_text" id="main_text"></textarea>
+        </div>
+
+        <div>
+            <label>Вложение</label>
+            <input type="file" id="file" name="file">
+        </div>
+
+        <div class="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Я даю согласие на обработку персонаных данных</label>
+        </div>
+
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+</body>
+</html>

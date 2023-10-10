@@ -1,0 +1,75 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-size: contain;
+}
+
+form {
+    background-color: #20c7f5;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    border: 5px solid #000;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    color:#000000 
+}
+
+.simple_text {
+    width: 100%;
+}
+
+.input-text {
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 11px;
+}
+
+.checkbox input {
+    margin-right: 5px;
+    margin-bottom: 11px;
+}
+
+button {
+    background-color: #32db73;
+    color: #ffffff;
+    border: none;
+    padding:15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #23964f;
+}
+
+.upper_div {
+    position: absolute;
+    background-color: #FFFFFF;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
