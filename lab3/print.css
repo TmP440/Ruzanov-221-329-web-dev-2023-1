@@ -1,0 +1,39 @@
+@media print {
+    .search-box {
+        display: none;
+    }
+
+    .menu-container {
+        display: none;
+    }
+
+    .welcome-container img {
+        display: none;
+    }
+
+    .welcome-text h1{
+        color: yellow;
+        text-shadow: none;
+    }
+    
+    .welcome-text p{
+        color: black;
+    }
+
+    .description-container p{
+        color: black;
+        margin-top: 20px;
+    }
+
+    .bestsellers-container{
+        display: none;
+    }
+
+    .feedback-contacts-container {
+        margin-top: 30px;
+    }
+
+    footer {
+        display: none;
+    }
+}

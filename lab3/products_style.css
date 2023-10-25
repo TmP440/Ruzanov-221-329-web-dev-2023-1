@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+}
+
+.custom-font {
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.name-and-search-container {
+    background-color: rgb(254, 254, 52);
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    font-size: 2rem;
+    flex: 50%;
+    justify-content: center;
+}
+
+.name-and-search-container img {
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.search-box {
+    display: flex;
+    height: 50px;
+    margin-top: 45px;
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+.search-box input {
+    border-color: black;
+    background-color: transparent;
+    border-radius: 15px;
+    flex: 1;
+    color: black;
+}
+
+.search-box input::placeholder {
+    color: black;
+    padding-left: 5px;
+}
+
+.search-box img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-container {
+    background-color: rgb(84, 80, 80);
+}
+
+.menu-container ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container li {
+    padding: 20px 0px 20px 0px;
+    font-size: 2rem;
+    color: white;
+    margin-right: 50px;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.products-container {
+    display: flex;
+    background-color: rgb(42,79,61);
+    height: 1500px;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+}
+
+.elem {
+    width: 40%;
+    height: 700px;
+    background-color: rgb(112,132,51);
+    margin: 20px 0px 0px 20px;
+}
+
+.custom-img-1 {
+    height: 450px;
+    width: 95%;
+    margin: auto;
+    background-image: url(img/flour.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-img-1:hover {
+    background-image: url(img/flour-2.jpg);
+    transition: 1s;
+}
+
+.custom-img-2 {
+    height: 450px;
+    width: 95%;
+    margin: auto;
+    background-image: url(img/gematogen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-img-2:hover {
+    background-image: url(img/gematogen-2.jpg);
+    transition: 1s;
+}
+
+.custom-img-3 {
+    height: 450px;
+    width: 95%;
+    margin: auto;
+    background-image: url(img/macaron.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-img-3:hover {
+    background-image: url(img/macaron-2.jpg);
+    transition: 1s;
+}
+
+.custom-img-4 {
+    height: 450px;
+    width: 95%;
+    margin: auto;
+    background-image: url(img/sahar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-img-4:hover {
+    background-image: url(img/sahar-2.jpg);
+    transition: 1s;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(84, 80, 80);
+    color: white;
+    height: 50px;
+}
+
+.product-name {
+    color: yellow;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.price-num-container {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.tag {
+    padding-top: 15px;
+}
+
+@media print{
+    .search-box {
+        display: none;
+    }
+
+    .menu-container {
+        display: none;
+    }
+
+    .products-container {
+        height: 500px;
+    }
+
+    .elem {
+        height: 100px;
+    }
+
+    .custom-img-1 {
+        display: none;
+    }
+
+    .custom-img-2 {
+        display: none;
+    }
+
+    .custom-img-3 {
+        display: none;
+    }
+
+    .custom-img-4 {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+}

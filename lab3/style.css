@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+}
+
+.custom-font {
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.name-and-search-container {
+    background-color: rgb(254, 254, 52);
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    font-size: 2rem;
+    flex: 50%;
+    justify-content: center;
+}
+
+.name-and-search-container img {
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.search-box {
+    display: flex;
+    height: 50px;
+    margin-top: 45px;
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+.search-box input {
+    border-color: black;
+    background-color: transparent;
+    border-radius: 15px;
+    flex: 1;
+    color: black;
+}
+
+.search-box input::placeholder {
+    color: black;
+    padding-left: 5px;
+}
+
+.search-box img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-container {
+    background-color: rgb(84, 80, 80);
+}
+
+.menu-container ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container li {
+    padding: 20px 0px 20px 0px;
+    font-size: 2rem;
+    color: white;
+    margin-right: 50px;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.welcome-container {
+    display: flex;
+    background-color: rgb(42,79,61);
+}
+
+.welcome-container img{
+    width: 55%;
+}
+
+.welcome-text {
+    margin: auto;
+}
+
+.welcome-text h1{
+    text-align: center;
+    color: yellow;
+    text-shadow: 3px 3px 3px black;
+    font-size: 2.5rem;
+}
+
+.welcome-text p{
+    font-size: 4rem;
+    margin: 0;
+    color: white;
+}
+
+.description-container {
+    text-align: justify;
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(112,132,51);
+}
+
+.description-container p{
+    width: 80%;
+    margin: auto;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.bestsellers-container {
+    background-color: rgb(43,43,17);
+    height: 530px;
+}
+
+.bestsellers-container h1{
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.bestsellers-products {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.bestsellers-products img{
+    width: 300px;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 30px;
+}
+
+.hits-btn {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(0,166,183);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    border-radius: 10px;
+}
+
+.feedback-contacts-container {
+    background-color: rgb(43,43,17);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.feedback-container {
+    margin-right: 50px;
+}
+
+.feedback-container input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 200px;
+    height: 50px;
+    color: white;
+}
+
+.feedback-container input::placeholder{
+    color: white;
+}
+
+.contacts-container {
+    color: white
+}
+
+.heading-text {
+    color: rgb(0,166,183);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(84, 80, 80);
+    color: white;
+    height: 50px;
+}
+
+.tag {
+    padding-top: 15px;
+}
