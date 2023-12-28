@@ -129,7 +129,8 @@ function searchBtnHandler() {
 }
 
 function autocompleteRequest(query) {
-    const autocompleteEndpoint = 'http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=' + query;
+    const encodedQuery = encodeURIComponent(query);
+    const autocompleteEndpoint = 'http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=' + encodedQuery;
     let xhr = new XMLHttpRequest();
     xhr.open('GET', autocompleteEndpoint, false); // false здесь означает синхронный запрос
     xhr.send();
