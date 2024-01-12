@@ -91,6 +91,25 @@ function changeOrderData() {
     return changedOrder;
 }
 
+function showAlert(msg, type) {
+    const alertPlaceholder = document.getElementById('placeForAlert');
+    const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+        ].join('');
+
+        alertPlaceholder.append(wrapper);
+
+        setTimeout(() => {
+            wrapper.remove();
+        }, 5000);
+    };
+    appendAlert(msg, type);
+}
 
 function changeOrder() {
     const url = `http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders/${id}?api_key=${api_key}`;
@@ -103,17 +122,17 @@ function changeOrder() {
 
     xhr.onload = function() {
         if (xhr.status) {
-            createAlert("Запись успешна изменена!", "success");
+            showAlert("Запись успешна изменена!", "success");
             loadOrders();
         } else {
-            createAlert("Ошибка при редактировании: " + this.response.error, "danger");
+            showAlert("Ошибка при редактировании: " + this.response.error, "danger");
         }
     };
 
     xhr.send(order);
 }
 
-function deleteOrder() {
+function deleteOrder(id) {
     const url = `http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders/${id}?api_key=${api_key}`;
 
     let xhr = new XMLHttpRequest();
@@ -122,25 +141,14 @@ function deleteOrder() {
 
     xhr.onload = function () {
         if (xhr.status) {
-            createAlert("Запись успешна удалена!", "success");
+            showAlert("Запись успешна удалена!", "success");
             loadOrders();
         } else {
-            createAlert("Ошибка при удаление: " + this.response.error, "danger");
+            showAlert("Ошибка при удаление: " + this.response.error, "danger");
         }
     };
 
     xhr.send();
-}
-
-function showOrderBtnClick() {
-    currentGuideID = event.currentTarget.getAttribute("guide-id");
-    currentOrderID = event.currentTarget.getAttribute("order-id");
-    let order = getOrder(currentOrderID);
-    setModalValues(order.date, order.time, order.duration, order.persons,
-        order.optionFirst, order.optionSecond, order.price);
-    disableModal(true);
-    document.getElementById("cancelOrderBtn").style.display = 'none';
-    document.getElementById("confirmOrderBtn").style.display = 'none';
 }
 
 function checkPeopleNumber() {
@@ -150,18 +158,6 @@ function checkPeopleNumber() {
     } else {
         document.getElementById("secondCheckBox").disabled = false;
     }
-}
-
-function changeOrderBtnClick() {
-    currentGuideID = event.currentTarget.getAttribute("guide-id");
-    currentOrderID = event.currentTarget.getAttribute("order-id");
-    let order = getOrder(currentOrderID);
-    setModalValues(order.date, order.time, order.duration, order.persons,
-        order.optionFirst, order.optionSecond, order.price);
-    disableModal(false);
-    checkPeopleNumber();
-    document.getElementById("cancelOrderBtn").style.display = 'block';
-    document.getElementById("confirmOrderBtn").style.display = 'block';
 }
 
 function deleteOrderBtnClick() {
