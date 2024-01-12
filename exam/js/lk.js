@@ -5,6 +5,10 @@ const api_key = '8c41fc00-75c5-41e6-aa6d-bff1d18e53d0';
 let orders;
 let routes;
 
+function showOrderBtnClick() {}
+
+function changeOrderBtnClick() {}
+
 function loadOrders() {
     const url = `http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=${api_key}`;
 
