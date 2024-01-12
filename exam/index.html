@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Женское удовольствие</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-crimson">
+    <header class="container-fluid bg-pink">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="img/logo.png" alt="logo" style="width: 5em">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-black">О нас</a></li>
+                <li><a href="#goods" class="nav-link px-2 text-black">Преимущества</a></li>
+                <li><a href="#routes" class="nav-link px-2 text-black">Рандеву</a></li>
+            </ul>
+            <div class="text-end">
+                <button class="btn btn-light text-nowrap mx-2">
+                    <a href="html/lk.html" class="text-decoration-none text-black">Личный кабинет</a>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="">
+        <div class="container-fluid row bg-crimson text-white">
+            <div class="col p-0">
+                <img src="img/roses.jpg" alt="roses" class="w-100">
+            </div>
+            <div class="col p-0">
+                <p class="ps-5 pt-5 fs-3">
+                    Наша компания предоставляет возможность женщинам получить 
+                    незабываемые ощущения от поездки в компании <br>"Женское удовольствие"
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid row h-50" id="goods">
+            <div class="col p-0">
+                <div>
+                    <img src="img/safety.jpg" alt="safety" class="w-100">
+                </div>
+                <div class="text-center bg-black text-white">
+                    <h3>Безопасность</h3>
+                    <p class="ps-3 pb-2">С нами вы никуда не пропадете. Ведь наши специалисты сделаю все, что бы ваша поездка была комфортной.</p>
+                </div>
+            </div>
+            <div class="col p-0">
+                <div class="text-center bg-black text-white m-0">
+                    <h3>Комфорт</h3>
+                    <p class="ps-3 pb-2">Мы предоставляем нашим клиентам комфортабельное проживание, питание и путешествие.</p>
+                </div>
+                <div class="p-0 m-0">
+                    <img src="img/comfort.jpg" alt="comfort" class="w-100">
+                </div>
+            </div>
+            <div class="col p-0">
+                <div>
+                    <img src="img/confidentiality.jpg" alt="conf" class="w-100">
+                </div>
+                <div class="text-center bg-black text-white">
+                    <h3>Конфиденциальность</h3>
+                    <p class="ps-3 pb-2">Ваши секреты и данные находятся в самых надежный руках. Поэтому вы можете испробовать все вина в ресторанах и никто не узнает, с кем и где.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid h-50 text-white">
+            <h3>Доступные рандеву</h3>
+            <div class="pb-3 d-flex flex-row gap-5 text-nowrap">
+                <div class="position-relative col-lg-3">
+                    <label class="form-label" for="routeSelector">Выберите место</label>
+                    <select class="form-select" id="routeSelector" onchange="setupRoutesObjectFilter()">
+                        <option value="noChoice">Не выбрано</option>
+                    </select>
+                </div>
+                <div class="position-relative col-lg-3">
+                    <label class="form-label" for="routeName">Поиск экскурсий</label>
+                    <input class="form-control" id="routeName" onchange="setupRoutesNameFilter()" placeholder="Название экскурсии" required type="text">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-sm">
+                    <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Описание</th>
+                        <th>Места</th>
+                        <th>Запись</th>
+                    </tr>
+                    </thead>
+                    <tbody id="routes"></tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
+        </div>
+        <div class = "container-fluid h-50">
+            <div id="placeForAlert"></div>
+        </div>
+        <div class="container-fluid h-50 text-white" id="guidesBlock" style="display: none">
+            <h2 class="pb-2">Партнеры на рандеву</h2>
+            <div class="pb-3 d-flex flex-row gap-5 text-nowrap">
+                <div class="position-relative col-lg-3">
+                    <label class="form-label" for="languageSelector">Выберите язык</label>
+                    <select class="form-select" id="languageSelector" onchange="setupGuideLanguageFilters()">
+                        <option value="Не выбрано">Не выбран</option>
+                    </select>
+                </div>
+                <div class="position-relative col-lg-3">
+                    <label class="form-label">Опыт работы</label>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="expMinValue">От:</label>
+                        <input type="text" class="form-control" id="expMinValue">
+                        <label class="input-group-text" for="expMaxValue">До:</label>
+                        <input type="text" class="form-control" id="expMaxValue">
+                        <button class="btn btn-dark" type="button" id="searchForGuide" onclick="setupGuideExpFilters()">Поиск</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-sm">
+                    <thead>
+                    <tr>
+                        <th style="width: 4em">Фото</th>
+                        <th>ФИО</th>
+                        <th>Языки</th>
+                        <th>Опыт</th>
+                        <th>Стоимость</th>
+                        <th style="width: 5em">Выбор</th>
+                    </tr>
+                    </thead>
+                    <tbody id="guides"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom border-white pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">О нас</a></li>
+            <li class="nav-item"><a href="#goods" class="nav-link px-2 text-white">Преимущества</a></li>
+            <li class="nav-item"><a href="#routes" class="nav-link px-2 text-white">Рандеву</a></li>
+        </ul>
+        <p class="text-center text-white">© 2024, Женское удовольствие</p>
+    </footer>
+
+    <!--Modal window-->
+    <div class="modal fade" id="orderModal">
+        <div class="modal-dialog modal-lg text-white">
+            <div class="modal-content bg-crimson">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Оформление заявки</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="orderingModal" onchange="calculateTotalPrice()">
+                    <div class="row justify-content-center">
+                        <div class="col text-center h6" id="selectedGuideName"></div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col text-center h6" id="selectedRouteName"></div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <p class="h6 text-center">Дата</p>
+                            <input class="form-control" required type="date" id="routeDate">
+                        </div>
+                        <div class="col-3">
+                            <p class="h6 text-center">Время</p>
+                            <input class="form-control" type="time" min="09:00" max="23:00" required step="1800" id="routeTime">
+                        </div>
+                        <div class="col-3">
+                            <p class="h6 text-center">Длительность</p>
+                            <select class="form-select" aria-label="Default select example" id="routeDuration">
+                                <option value="1">1 час</option>
+                                <option value="2">2 часа</option>
+                                <option value="3">3 часа</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-4 h6 text-center">
+                            <p>Количество человек:</p>
+                        </div>
+                        <div class="col-4 h6">
+                            <input type="number" class="form-control" min="1" max="20" id="peopleCount" onchange="checkPeopleCount()">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col h6">
+                            <p>Дополнительные опции</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-5 text-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="firstCheckBox">
+                                <label class="form-check-label" for="firstCheckBox">
+                                    Льготы для обучающихся
+                                </label>
+                            </div>
+                            <p class="h6">Скидка для школьников и студентов</p>
+                            <p class="h6"><small>-15% к стоимости</small></p>
+                        </div>
+                        <div class="col-5 text-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="secondCheckBox">
+                                <label class="form-check-label" for="secondCheckBox">
+                                    Сопровождение сурдопереводчика
+                                </label>
+                            </div>
+                            <p class="h6">Для групп не больше 10 человек</p>
+                            <p class="h6"><small>+15%, если посетителей от 1 до 5, +25%, если от 5 до 10</small></p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center my-4">
+                        <div class="col-5 text-end">
+                            <p class="h6">Итоговая стоимость: </p>
+                        </div>
+                        <div class="col-4 text-start">
+                            <p class="h6" id="totalPrice"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="cancelOrderBtn">Отмена</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" onclick="confirmOrderClick()" id="confirmOrderBtn">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
